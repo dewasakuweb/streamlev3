@@ -549,75 +549,8 @@
     })
   </script>
 
-</body>
-</html>
-
 <script>
-  // tanggal otomatis
-  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
-
-  // scroll reveal
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, {threshold:0.12});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-  // ADMIN MODE — ganti "gantiPasswordMu123" dengan password pilihanmu
-  const ADMIN_PASSWORD = "gantiPasswordMu123";
-  document.getElementById('adminToggle').addEventListener('click', function(){
-    if(document.body.classList.contains('admin-on')){
-      document.body.classList.remove('admin-on');
-      return;
-    }
-    const input = prompt("Masukkan password admin:");
-    if(input === ADMIN_PASSWORD){
-      document.body.classList.add('admin-on');
-    } else if(input !== null){
-      alert("Password salah.");
-    }
-  });
-  document.getElementById('closeAdmin').addEventListener('click', function(){
-    document.body.classList.remove('admin-on');
-  });
-
-  // upload foto per slot
-  document.querySelectorAll('.upload-btn').forEach(btn=>{
-    btn.addEventListener('click', function(){
-      const slot = this.dataset.slot;
-      document.querySelector('.file-input[data-slot="'+slot+'"]').click();
-    });
-  });
-  document.querySelectorAll('.file-input').forEach(inp=>{
-    inp.addEventListener('change', function(e){
-      const file = e.target.files[0];
-      if(!file) return;
-      const reader = new FileReader();
-      reader.onload = function(ev){
-        const slot = inp.dataset.slot;
-        const poster = inp.closest('.poster');
-        const fill = poster.querySelector('.poster-fill');
-        fill.style.backgroundImage = "url('"+ev.target.result+"')";
-        fill.querySelector('svg').style.display = 'none';
-        fill.querySelector('.slot-label').style.display = 'none';
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-
-  // download HTML lengkap (siap paste ke GitHub)
-  document.getElementById('downloadBtn').addEventListener('click', function(){
-    document.body.classList.remove('admin-on');
-    const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-    const blob = new Blob([htmlContent], {type:'text/html'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'landing-page-film-asia.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+ 
 </script>
 
 <!-- Histats.com  START  (aync)-->
@@ -633,4 +566,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5034727&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
 
-</body></html>
+</body>
+</html>
