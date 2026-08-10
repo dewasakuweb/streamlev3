@@ -2,7 +2,7 @@
 <html lang="id"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>FILM ING</title>
+<title>FILM ASIA VIRAL TERBARU 2026 — Update Setiap Hari</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -428,52 +428,131 @@
 </section>
 
 <!-- FORM ORDER - area kosong, tanpa border/teks -->
-
-</div>
-    <iframe background-color: #ffffff;
-      width: 100%;
-      max-width: 550px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e1e8ed;
-      overflow: hidden;
-      padding: 24px;
-      box-sizing: border-box;
+<div class="order-area" id="order">
+  <iframe id="myiframe" width="100%" frameborder="0" style="border: 2px solid #8f3400; border-radius: 8px; background-color: #fff8f5;" src="https://ebookviral.store/formfd"></iframe>
+<script>
+    const iframe = document.getElementById('myiframe');
+    function resizeIframe(height) { 
+        iframe.style.height = height + 'px'; 
     }
+    function isUrl(string) {
+        try { new URL(string); return true; } catch (_) { return false; }
+    }
+    function isJSONObject(string) {
+        try { 
+            const parsed = JSON.parse(string); 
+            return typeof parsed === 'object' && parsed !== null; 
+        } catch (e) { return false; }
+    }
+    function isIframeSameOrigin() {
+        try { 
+            const doc = iframe.contentDocument || iframe.contentWindow.document; 
+            return true; 
+        } catch (e) { return false; }
+    }
+    window.addEventListener('message', function (e) {
+        if (e.origin === 'https://ebookviral.store') {
+            if (isUrl(e.data)) { location.href = e.data; }
+            if (isJSONObject(e.data) && !isIframeSameOrigin()) {
+                const message = JSON.parse(e.data);
+                if (message.type === 'resize') { resizeIframe(message.height); }
+            }
+        }
+    }, false);
+    document.addEventListener('DOMContentLoaded', function () {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    iframe.src = iframe.src;
+                    observer.disconnect();
+                }
+            });
+        });
+        observer.observe(iframe);
+    });
+</script>
+</script>
+</div>
 
+<footer>
+  <p>© 2026 NontonAsia — Diperbarui setiap hari.</p>
+</footer>
 
+<!-- ADMIN PANEL (khusus pemilik web) -->
+<div class="admin-toggle" id="adminToggle" title="Admin">⚙</div>
+<div class="download-bar" id="downloadBar">
+  <button class="download-btn" id="downloadBtn">⬇ Download HTML</button>
+  <button class="close-admin" id="closeAdmin">Tutup</button>
+</div>
 
-  >
-  <iframe id="myiframe" width="100%" frameborder="0" src="https://ebookviral.store/formfd"></iframe><script>const iframe=document.getElementById('myiframe')
-        function resizeIframe(height){iframe.style.height=height+'px'}
-        function isUrl(string){try{new URL(string)
-        return true}catch(_){return false}}
-        function isJSONObject(string){try{const parsed=JSON.parse(string)
-        return typeof parsed==='object'&&parsed!==null}catch(e){return false}}
-        function isIframeSameOrigin(){try{const doc=iframe.contentDocument||iframe.contentWindow.document
-        return true}catch(e){return false}}
-        window.addEventListener('message',function(e){if(e.origin==='https://ebookviral.store'){if(isUrl(e.data)){location.href=e.data}
-        if(isJSONObject(e.data)&&!isIframeSameOrigin()){const message=JSON.parse(e.data)
-        if(message.type==='resize'){resizeIframe(message.height)}}}},false)
-        document.addEventListener('DOMContentLoaded', function () {var observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {if (entry.isIntersecting) {
-        iframe.src = iframe.src
-        observer.disconnect()}})})
-        observer.observe(iframe)})</script>
+<script>
+  // tanggal otomatis
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+
+  // scroll reveal
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // ADMIN MODE — ganti "gantiPasswordMu123" dengan password pilihanmu
+  const ADMIN_PASSWORD = "gantiPasswordMu123";
+  document.getElementById('adminToggle').addEventListener('click', function(){
+    if(document.body.classList.contains('admin-on')){
+      document.body.classList.remove('admin-on');
+      return;
+    }
+    const input = prompt("Masukkan password admin:");
+    if(input === ADMIN_PASSWORD){
+      document.body.classList.add('admin-on');
+    } else if(input !== null){
+      alert("Password salah.");
+    }
+  });
+  document.getElementById('closeAdmin').addEventListener('click', function(){
+    document.body.classList.remove('admin-on');
+  });
+
+  // upload foto per slot
+  document.querySelectorAll('.upload-btn').forEach(btn=>{
+    btn.addEventListener('click', function(){
+      const slot = this.dataset.slot;
+      document.querySelector('.file-input[data-slot="'+slot+'"]').click();
+    });
+  });
+  document.querySelectorAll('.file-input').forEach(inp=>{
+    inp.addEventListener('change', function(e){
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev){
+        const slot = inp.dataset.slot;
+        const poster = inp.closest('.poster');
+        const fill = poster.querySelector('.poster-fill');
+        fill.style.backgroundImage = "url('"+ev.target.result+"')";
+        fill.querySelector('svg').style.display = 'none';
+        fill.querySelector('.slot-label').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  // download HTML lengkap (siap paste ke GitHub)
+  document.getElementById('downloadBtn').addEventListener('click', function(){
+    document.body.classList.remove('admin-on');
+    const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], {type:'text/html'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'landing-page-film-asia.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 </script>
 
-<!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,5034727,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5034727&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
 
-</body>
-</html>
+
+</body></html>
