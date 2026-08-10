@@ -429,275 +429,43 @@
 
 <!-- FORM ORDER - area kosong, tanpa border/teks -->
 <div class="order-area" id="order">
-  <iframe <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Semi Asia Viral Terbaru 2026 - Akses Lifetime</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0a0a0a',
-                            red: '#e50914', // Netflix-style red for impact
-                            redDark: '#b20710',
-                            gray: '#1f1f1f',
-                            lightText: '#e5e5e5'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
+  <iframe <iframe id="myiframe" width="100%" frameborder="0" src="https://ebookviral.store/formfd" style="background-color: #ffffff;"></iframe>
+<script>
+  const iframe = document.getElementById('myiframe')
+  function resizeIframe(height) { iframe.style.height = height + 'px' }
+  function isUrl(string) { try { new URL(string); return true } catch (_) { return false } }
+  function isJSONObject(string) { try { const parsed = JSON.parse(string); return typeof parsed === 'object' && parsed !== null } catch (e) { return false } }
+  function isIframeSameOrigin() { try { const doc = iframe.contentDocument || iframe.contentWindow.document; return true } catch (e) { return false } }
+  window.addEventListener('message', function (e) {
+    if (e.origin === 'https://ebookviral.store') {
+      if (isUrl(e.data)) { location.href = e.data }
+      if (isJSONObject(e.data) && !isIframeSameOrigin()) {
+        const message = JSON.parse(e.data)
+        if (message.type === 'resize') { resizeIframe(message.height) }
+      }
+    }
+  }, false)
+  document.addEventListener('DOMContentLoaded', function () {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          iframe.src = iframe.src
+          observer.disconnect()
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
-        
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Subtle background glow effect */
-        .bg-glow {
-            position: absolute;
-            top: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle, rgba(229, 9, 20, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #ff4d4d, #e50914);
-        }
-
-        /* Image hover effect */
-        .video-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .video-card:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
-            z-index: 10;
-        }
-
-        /* Pulse animation for the main CTA */
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(229, 9, 20, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
-        }
-        
-        .btn-pulse {
-            animation: pulse-red 2s infinite;
-        }
-
-        /* Styles for upload functionality */
-        .upload-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 20;
-        }
-
-        .video-card:hover .upload-overlay {
-            opacity: 1;
-        }
-
-        .upload-btn {
-            background-color: #e50914;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .upload-btn:hover {
-            background-color: #b20710;
-        }
-
-        .hidden-input {
-            display: none;
-        }
-
-        /* Style Container Form Putih dengan Border Putih */
-        .form-order-wrapper {
-            background-color: #ffffff;
-            border: 4px solid #ffffff;
-            border-radius: 12px;
-            padding: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-    </style>
-</head>
-<body class="antialiased relative">
-    <div class="bg-glow"></div>
-
-    <header class="container mx-auto px-4 pt-16 pb-12 text-center max-w-4xl relative z-10">
-        <div class="inline-block bg-brand-red text-white text-sm font-bold px-4 py-1 rounded-full uppercase tracking-wider mb-6 animate-bounce">
-            Akses Lifetime Dibuka!
-        </div>
-        
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight uppercase">
-            <span class="text-white">FILM SEMI ASIA VIRAL </span>
-            <span class="text-gradient block mt-2">TERBARU 2026</span>
-            <span class="text-3xl md:text-5xl text-brand-red mt-2 block">UPDATE TIAP HARI</span>
-        </h1>
-        
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-300 mb-8 italic">
-            "Dijamin Bikin Tegang & Puas Banget Seharian"
-        </h2>
-        
-        <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-3xl mx-auto border-l-4 border-brand-red pl-4 text-left">
-            Bosan sama film semi biasa yang cuma bikin setengah tegang? Sekarang ada koleksi <strong class="text-white">Film Semi Asia Viral Terbaru 2026</strong> yang di-update setiap hari.
-        </p>
-
-        <div class="bg-brand-gray rounded-2xl p-6 md:p-8 mb-12 border border-gray-800 shadow-2xl text-left">
-            <p class="text-brand-lightText mb-6 text-lg leading-relaxed">
-                Di sini kamu bakal nemuin cewek-cewek Asia cantik, body montok, toket gede, dan memek basah yang siap dientot habis-habisan. Setiap video dijamin bikin kontol langsung tegang, cepat crot, dan puas banget sampai lemes.
-            </p>
-            
-            <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Yang Tersedia:</h3>
-            <ul class="space-y-4 text-lg text-gray-300">
-                <li class="flex items-start">
-                    <svg class="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Cewek Asia montok yang memeknya sempit & basah kuyup</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Adegan dicabuli, digilir, dihisap, dan dientot brutal</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Suara ngemis yang bikin kontolmu makin keras</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span><strong>Update setiap hari</strong> biar kamu gak pernah kehabisan bahan ngocok</span>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <section class="container mx-auto px-4 py-12 relative z-10">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-wide">
-                Bocoran <span class="text-brand-red">Koleksi Premium</span>
-            </h2>
-            <p class="text-gray-400 mt-2">Ini cuma sebagian kecil dari ribuan video yang nunggu kamu!</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            <!-- Video Cover Item -->
-            <div class="video-card bg-gray-900 rounded-xl overflow-hidden relative group">
-                <div class="aspect-[3/4] bg-gray-800 flex items-center justify-center">
-                    <img id="cover-img-1" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAIVAWcDASIAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAABgMEBQcAAQII/8QARxAAAQMDAwIEBAQFAQYEBQQDAQIDBAAFEQYSITFBBxNRYSJxgZEUMqGxFSNCwdFSCDNiciHw533333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333.jpg" alt="Film Semi Asia Cover">
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Form Order dengan warna background putih dan border putih -->
-        <div class="form-order-wrapper mt-12">
-            <iframe id="myiframe" width="100%" frameborder="0" src="https://ebookviral.store/formfd"></iframe>
-        </div>
-    </section>
-
-    <script>
-        const iframe = document.getElementById('myiframe');
-        function resizeIframe(height) {
-            iframe.style.height = height + 'px';
-        }
-        function isUrl(string) {
-            try {
-                new URL(string);
-                return true;
-            } catch (_) {
-                return false;
-            }
-        }
-        function isJSONObject(string) {
-            try {
-                const parsed = JSON.parse(string);
-                return typeof parsed === 'object' && parsed !== null;
-            } catch (e) {
-                return false;
-            }
-        }
-        function isIframeSameOrigin() {
-            try {
-                const doc = iframe.contentDocument || iframe.contentWindow.document;
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-        window.addEventListener('message', function (e) {
-            if (e.origin === 'https://ebookviral.store') {
-                if (isUrl(e.data)) {
-                    location.href = e.data;
-                }
-                if (isJSONObject(e.data) && !isIframeSameOrigin()) {
-                    const message = JSON.parse(e.data);
-                    if (message.type === 'resize') {
-                        resizeIframe(message.height);
-                    }
-                }
-            }
-        }, false);
-        document.addEventListener('DOMContentLoaded', function () {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        iframe.src = iframe.src;
-                        observer.disconnect();
-                    }
-                });
-            });
-            observer.observe(iframe);
-        });
-    </script>
-</body>
-</html>
+      })
+    })
+    observer.observe(iframe)
+  })
 </script>
-</div>
-
+</script>
+</div> 
+  <iframe>
+         
+<script>
 <footer>
   <p>© 2026 NontonAsia — Diperbarui setiap hari.</p>
 </footer>
 
-<!-- ADMIN PANEL (khusus pemilik web) -->
-<div class="admin-toggle" id="adminToggle" title="Admin">⚙</div>
-<div class="download-bar" id="downloadBar">
-  <button class="download-btn" id="downloadBtn">⬇ Download HTML</button>
-  <button class="close-admin" id="closeAdmin">Tutup</button>
-</div>
 
 <script>
   // tanggal otomatis
