@@ -443,16 +443,7 @@
         const message = JSON.parse(e.data)
         if (message.type === 'resize') { resizeIframe(message.height) }
       }
-    }
-  }, false)
-  document.addEventListener('DOMContentLoaded', function () {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          iframe.src = iframe.src
-          observer.disconnect()
-        }
-      })
+    
     })
     observer.observe(iframe)
   })</script>
